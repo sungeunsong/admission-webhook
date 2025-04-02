@@ -10,20 +10,22 @@ app.post("/validate", (req, res) => {
   const labels = req.body.request.object?.metadata?.labels || {};
   const allowed = labels.team === "dev";
 
-  const response = {
+  const review = {
+    apiVersion: "admission.k8s.io/v1",
+    kind: "AdmissionReview",
     response: {
-      uid,
-      allowed,
+      uid: uid,
+      allowed: allowed,
     },
   };
 
   if (!allowed) {
-    response.response.status = {
+    review.response.status = {
       message: "Missing required label: team=dev",
     };
   }
 
-  res.json(response);
+  res.json(review);
 });
 
 const options = {
