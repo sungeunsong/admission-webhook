@@ -76,7 +76,6 @@ kube-apiserver \
   `team=dev` 라벨이 없는 Pod 생성 요청을 거부하는 웹훅 서버를 구축함
 - Node.js + Express로 구현
 - Self-signed 인증서를 사용해 TLS 통신 구성
-- Webhook 서버 자신이 정책에 걸리지 않도록 `objectSelector`로 예외 처리
 
 ---
 
