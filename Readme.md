@@ -36,7 +36,10 @@ Kubernetes에 기본 탑재된 정책 제어 플러그인. 일부 예시는 다�
 | `PodSecurity`        | Pod 수준의 보안 프로필 적용 (restricted 등) |
 
 > ⚠️ 대부분은 `kube-apiserver`의 `--enable-admission-plugins` 옵션으로 활성화 여부가 결정.
-
+```
+kube-apiserver \
+  --enable-admission-plugins=NamespaceLifecycle,LimitRanger,ServiceAccount,ResourceQuota
+```
 ---
 
 ### 2. Webhook Admission Controllers (사용자 정의)
