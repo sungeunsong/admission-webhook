@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SERVICE_NAME=webhook
-NAMESPACE=default
+NAMESPACE=admission
 TMPDIR=$(mktemp -d)
 
 # 인증서 생성
